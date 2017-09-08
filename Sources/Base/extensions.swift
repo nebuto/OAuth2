@@ -96,7 +96,7 @@ extension URLRequest {
 		guard let access = oauth2.clientConfig.accessToken, !access.isEmpty else {
 			throw OAuth2Error.noAccessToken
 		}
-		setValue("Bearer \(access)", forHTTPHeaderField: "Authorization")
+		setValue("\(access)", forHTTPHeaderField: "Authorization")
 	}
 	
 	/**
