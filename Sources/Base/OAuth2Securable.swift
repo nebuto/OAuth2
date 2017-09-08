@@ -128,6 +128,17 @@ open class OAuth2Securable: OAuth2Requestable {
 			logger?.warn("OAuth2", msg: "Failed to load tokens from keychain: \(error)")
 		}
 	}
+    
+    open func fetchClientCredentialsFromKeychain() -> [String: Any]? {
+        do {
+            var creds = OAuth2KeychainAccount(oauth2: self, account: keychainAccountForClientCredentials)
+            return try creds.fetchedFromKeychain()
+        }
+        catch {
+            logger?.warn("OAuth2", msg: "Failed to load client credentials from keychain: \(error)")
+        }
+        return nil
+    }
 	
 	/** Updates instance properties according to the items found in the given dictionary, which was found in the keychain. */
 	func updateFromKeychainItems(_ items: [String: Any]) {

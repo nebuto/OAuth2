@@ -27,22 +27,22 @@ import SwiftKeychain
 /**
 Keychain integration handler for OAuth2.
 */
-struct OAuth2KeychainAccount: KeychainGenericPasswordType {
+public struct OAuth2KeychainAccount: KeychainGenericPasswordType {
 	
 	/// The service name to use.
-	let serviceName: String
+	public let serviceName: String
 	
 	/// The account name to use.
-	let accountName: String
+	public let accountName: String
 	
 	/// The keychain access group.
-	var accessGroup: String?
+	public var accessGroup: String?
 	
 	/// Data that ends up in the keychain.
-	var data = [String: Any]()
+	public var data = [String: Any]()
 	
 	/// Keychain access mode.
-	let accessMode: String
+	public let accessMode: String
 	
 	
 	/**
@@ -52,7 +52,7 @@ struct OAuth2KeychainAccount: KeychainGenericPasswordType {
 	- parameter account: The account name to use
 	- parameter data:    Data that we want to store to the keychain
 	*/
-	init(oauth2: OAuth2Securable, account: String, data inData: [String: Any] = [:]) {
+	public init(oauth2: OAuth2Securable, account: String, data inData: [String: Any] = [:]) {
 		serviceName = oauth2.keychainServiceName()
 		accountName = account
 		accessMode = String(oauth2.keychainAccessMode)
@@ -65,7 +65,7 @@ struct OAuth2KeychainAccount: KeychainGenericPasswordType {
 extension KeychainGenericPasswordType {
 	
 	/// Data to store to the keychain.
-	var dataToStore: [String: Any] {
+	public var dataToStore: [String: Any] {
 		return data
 	}
 	
@@ -74,7 +74,7 @@ extension KeychainGenericPasswordType {
 	
 	- returns: A [String: Any] dictionary of data fetched from the keychain
 	*/
-	mutating func fetchedFromKeychain() throws -> [String: Any] {
+	public mutating func fetchedFromKeychain() throws -> [String: Any] {
 		do {
 			try _ = fetchFromKeychain()
 			return data
