@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0C2F5E5B1DE2DB8500F621E0 /* OAuth2CodeGrantAzure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2F5E5A1DE2DB8500F621E0 /* OAuth2CodeGrantAzure.swift */; };
 		19C919DD1E51CC8000BFC834 /* OAuth2CustomAuthorizer+macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C919DC1E51CC8000BFC834 /* OAuth2CustomAuthorizer+macOS.swift */; };
-		58CCF4541F629BF500228E1D /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CCF4531F629BF500228E1D /* Keychain.swift */; };
 		6598544E1C5B3C9500237D39 /* OAuth2Authorizer+tvOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6598543F1C5B3B4000237D39 /* OAuth2Authorizer+tvOS.swift */; };
 		6598544F1C5B3C9C00237D39 /* OAuth2Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDB8640193FAB9200C4EEA1 /* OAuth2Base.swift */; };
 		659854501C5B3C9C00237D39 /* OAuth2Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF47D2A1B1E3FDD0057D838 /* OAuth2Requestable.swift */; };
@@ -166,7 +165,6 @@
 /* Begin PBXFileReference section */
 		0C2F5E5A1DE2DB8500F621E0 /* OAuth2CodeGrantAzure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuth2CodeGrantAzure.swift; sourceTree = "<group>"; };
 		19C919DC1E51CC8000BFC834 /* OAuth2CustomAuthorizer+macOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OAuth2CustomAuthorizer+macOS.swift"; sourceTree = "<group>"; };
-		58CCF4531F629BF500228E1D /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		6598543F1C5B3B4000237D39 /* OAuth2Authorizer+tvOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "OAuth2Authorizer+tvOS.swift"; path = "Sources/tvOS/OAuth2Authorizer+tvOS.swift"; sourceTree = SOURCE_ROOT; };
 		659854461C5B3BEA00237D39 /* OAuth2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OAuth2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		65EC05DF1C9050CB00DE9186 /* OAuth2KeychainAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuth2KeychainAccount.swift; sourceTree = "<group>"; };
@@ -283,7 +281,6 @@
 		EE2983731D40BC8900933CDD /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				58CCF4531F629BF500228E1D /* Keychain.swift */,
 				EEDB8640193FAB9200C4EEA1 /* OAuth2Base.swift */,
 				EE9EBF1A1D775F74003263FC /* OAuth2Securable.swift */,
 				EEF47D2A1B1E3FDD0057D838 /* OAuth2Requestable.swift */,
@@ -758,7 +755,6 @@
 				EE1391DA1AC5B41A002C7B18 /* OAuth2CodeGrantBasicAuth.swift in Sources */,
 				EA9758181B222CEA007744B1 /* OAuth2PasswordGrant.swift in Sources */,
 				EE507A381B1E15E000AE02E9 /* OAuth2DynReg.swift in Sources */,
-				58CCF4541F629BF500228E1D /* Keychain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
