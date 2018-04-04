@@ -170,29 +170,31 @@ public struct Keychain: KeychainServiceType {
 
 extension KeychainItemType {
     
-    public func saveInKeychain(_ keychain: KeychainServiceType?) throws {
+    public func saveInKeychain(_ keychain: KeychainServiceType? = nil) throws {
         var newKeychain = keychain
         if (newKeychain == nil) {
             newKeychain = Keychain()
         }
         
-        try newKeychain.insertItemWithAttributes(attributesToSave)
+        try newKeychain?.insertItemWithAttributes(attributesToSave)
     }
     
-    public func removeFromKeychain(_ keychain: KeychainServiceType?) throws {
+    public func removeFromKeychain(_ keychain: KeychainServiceType? = nil) throws {
+        var newKeychain = keychain
         if (newKeychain == nil) {
             newKeychain = Keychain()
         }
         
-        try newKeychain.removeItemWithAttributes(attributes)
+        try newKeychain?.removeItemWithAttributes(attributes)
     }
     
-    public mutating func fetchFromKeychain(_ keychain: KeychainServiceType?) throws -> Self {
+    public mutating func fetchFromKeychain(_ keychain: KeychainServiceType? = nil) throws -> Self {
+        var newKeychain = keychain
         if (newKeychain == nil) {
             newKeychain = Keychain()
         }
         
-        if  let result = try newKeychain.fetchItemWithAttributes(attributesForFetch),
+        if  let result = try newKeychain?.fetchItemWithAttributes(attributesForFetch),
             let itemData = dataFromAttributes(result) {
             
             data = itemData
