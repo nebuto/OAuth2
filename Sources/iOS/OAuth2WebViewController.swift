@@ -51,7 +51,7 @@ open class OAuth2WebViewController: UIViewController, WKNavigationDelegate {
 					interceptComponents = URLComponents(url: url, resolvingAgainstBaseURL: true)
 				}
 				else {
-                    oauth?.logger?.debug("OAuth2", msg: "Failed to parse URL \(interceptURLString), discarding")
+					oauth?.logger?.debug("OAuth2", msg: "Failed to parse URL \(interceptURLString), discarding")
 					self.interceptURLString = nil
 				}
 			}
@@ -167,11 +167,11 @@ open class OAuth2WebViewController: UIViewController, WKNavigationDelegate {
 		let _ = webView?.load(URLRequest(url: url))
 	}
 	
-	func goBack(_ sender: AnyObject?) {
+	@objc func goBack(_ sender: AnyObject?) {
 		let _ = webView?.goBack()
 	}
 	
-	func cancel(_ sender: AnyObject?) {
+	@objc func cancel(_ sender: AnyObject?) {
 		dismiss(asCancel: true, animated: (nil != sender) ? true : false)
 	}
 	
@@ -209,6 +209,7 @@ open class OAuth2WebViewController: UIViewController, WKNavigationDelegate {
 				else {
 					decisionHandler(.allow)
 				}
+				return
 			}
 		}
 		decisionHandler(.allow)
