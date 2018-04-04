@@ -62,7 +62,7 @@ public struct OAuth2KeychainAccount: KeychainGenericPasswordType {
 }
 
 
-extension KeychainGenericPasswordType {
+public extension KeychainGenericPasswordType {
 	
 	/// Data to store to the keychain.
 	public var dataToStore: [String: Any] {
